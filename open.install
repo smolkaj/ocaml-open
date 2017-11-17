@@ -1,0 +1,12 @@
+lib: [
+  "_build/install/default/lib/open/META" {"META"}
+  "_build/install/default/lib/open/opam" {"opam"}
+  "_build/install/default/lib/open/open.cmi"
+  "_build/install/default/lib/open/open.cmx"
+  "_build/install/default/lib/open/open.cmt"
+  "_build/install/default/lib/open/open.ml"
+  "_build/install/default/lib/open/open.cma"
+  "_build/install/default/lib/open/open.cmxa"
+  "_build/install/default/lib/open/open.a"
+  "_build/install/default/lib/open/open.cmxs"
+]
