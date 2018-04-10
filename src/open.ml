@@ -16,7 +16,8 @@ let open_cmd =
   | MacOS -> "open"
   | Linux -> "xdg-open"
 
-let file f =
-  Format.sprintf "%s %s" open_cmd f
+let in_default_app file =
+  let silence = "&> /dev/null" in
+  Format.sprintf "%s %s %s" open_cmd file silence
   |> Unix.system
   |> ignore

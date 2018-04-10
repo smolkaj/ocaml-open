@@ -6,6 +6,6 @@
 
 (alias
  ((name runtest)
-  (deps (test.exe ${ROOT}/test/pdf-sample.pdf))
+  (deps (test.exe ${ROOT}/test/ocaml.pdf ${ROOT}/test/ocaml.png ${ROOT}/test/ocaml.svg))
   (action (run ${<}))
 ))

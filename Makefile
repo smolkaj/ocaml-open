@@ -1,15 +1,11 @@
-INSTALL_ARGS := $(if $(PREFIX),--prefix $(PREFIX),)
-
 build:
 	time -p jbuilder build @install
 
 install:
-	jbuilder install $(INSTALL_ARGS)
+	jbuilder install
 
 uninstall:
-	jbuilder uninstall $(INSTALL_ARGS)
-
-reinstall: uninstall reinstall
+	jbuilder uninstall
 
 clean:
 	jbuilder clean
@@ -22,4 +18,4 @@ test:
 
 all: build test doc
 
-.PHONY: build install uninstall reinstall clean doc test all
+.PHONY: build install uninstall clean doc test all

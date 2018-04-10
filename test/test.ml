@@ -1,4 +1,9 @@
-let () =
-  Format.printf "attempting to open pdf file...\n";
-  Open.file "pdf-sample.pdf";
-  Format.printf "done..?\n";
+let extensions = ["pdf"; "png"; "svg"];;
+
+List.iter (fun ext ->
+  Format.printf "attempting to open %s file...\n%!" ext;
+  let file = "ocaml." ^ ext in
+  Open.in_default_app file
+) extensions;;
+
+Format.printf "done..?\n";;
