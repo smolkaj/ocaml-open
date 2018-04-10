@@ -12,6 +12,9 @@ There is also a more sophisticated example in `examples/graphviz` that requires 
 jbuilder build @graphviz
 ```
 
+## API
+The tiny API is documented [here](https://smolkaj.github.io/ocaml-open/).
+
 ## Limitations and Implementation
 The library has been tested under Linux and MacOS and will likely not run under Windows/Cygwin. It uses `xdg-open` on Linux and `open` on MacOS.
 
