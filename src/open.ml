@@ -3,10 +3,10 @@ type os =
   | Linux
 
 let detect_os () : os =
-  let ic = Unix.open_process_in "uname" in
-  let uname = input_line ic in
-  close_in ic;
-  match uname with
+  let in_ch,_,_ as uname = Unix.open_process_full "uname" [||] in
+  let os = input_line in_ch in
+  ignore (Unix.close_process_full uname);
+  match os with
   | "Darwin" -> MacOS
   | "Linux" -> Linux
   | _ -> failwith "unknown operating system"
@@ -17,7 +17,7 @@ let open_cmd =
   | Linux -> "xdg-open"
 
 let in_default_app file =
-  let silence = "&> /dev/null" in
+  let silence = "> /dev/null 2>&1" in
   Format.sprintf "%s %s %s" open_cmd file silence
   |> Unix.system
   |> ignore
