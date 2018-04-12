@@ -24,7 +24,7 @@ The tiny API is documented [here](https://smolkaj.github.io/ocaml-open/).
 ### Dependencies
 The library requires [`dune`](https://github.com/ocaml/dune) (formerly known as jbuilder) to build, but has no other dependencies.
 
-### Build and Examples
+### Building Library and Examples
 Run `make` to build and `make test` to see the library in action. This should open several files from the `examples/basic` folder.
 
 There is also a more sophisticated example in `examples/graphviz` that requires graphivz and Jane Street's [`core`](https://opensource.janestreet.com/core/) (version v0.9.0 or higher). You can build & run it as follows:
