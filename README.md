@@ -11,10 +11,15 @@ Then in `utop` or `ocaml`,
 $ ocaml
 > #require "open";;
 > Open.in_default_app "/home/steffen/ocaml.svg";;
-- : unit = ()
+- : bool = true
 ```
 ![OCaml](http://ocaml.org/logo/Colour/SVG/colour-logo.svg)
 
+The boolean returned by `Open.in_default_app` indicates whether the open command exited normally:
+```
+> Open.in_default_app "/path/to/non-existent.file";;
+- : bool = false
+```
 ## API
 The tiny API is documented [here](https://smolkaj.github.io/ocaml-open/).
 
@@ -33,7 +38,8 @@ jbuilder build @graphviz
 ```
 
 ## Limitations and Implementation
-The library has been tested under Linux and MacOS and will likely not run under Windows/Cygwin. It uses `xdg-open` on Linux and `open` on MacOS.
+The library has been tested under Linux and MacOS. There is experimental support for Windows/Cygwin, but this is untested.
+The implementation uses `xdg-open` on Linux, `open` on MacOS, and `cmd start` on Windows.
 
 ## Suggestion and Contributions
 Suggestions and contributions are always welcome. Feel free to submit pull requests.
