@@ -1,5 +1,5 @@
 build:
-	time -p jbuilder build @install
+	jbuilder build @install
 
 install:
 	jbuilder install
@@ -19,7 +19,6 @@ pushdoc: doc
 	git commit -a
 	git push
 	git checkout master
-
 
 test:
 	jbuilder build @runtest
