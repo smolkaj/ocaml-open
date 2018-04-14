@@ -15,19 +15,20 @@ let detect_os () : os =
   | "Linux" -> Linux
   | _ -> failwith "unknown operating system"
 
-let open_cmd =
-  match detect_os () with
+let open_cmd os =
+  match os with
   | MacOS -> "open"
   | Linux -> "xdg-open"
   | Windows | Cygwin -> "start"
 
-let silence =
-  match detect_os () with
+let silence os =
+  match os with
   | MacOS | Linux -> "> /dev/null 2>&1"
   | Windows | Cygwin -> "> nul 2>&1"
 
 let in_default_app file : bool =
-  Format.sprintf "%s %s %s" open_cmd file silence
+  let os = detect_os () in
+  Format.sprintf "%s %s %s" (open_cmd os) file (silence os)
   |> Unix.system
   |> function
     | Unix.WEXITED 0 -> true
