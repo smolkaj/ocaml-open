@@ -1,9 +1,10 @@
 let extensions = ["pdf"; "png"; "svg"];;
 
 List.iter (fun ext ->
-  Format.printf "attempting to open %s file...\n%!" ext;
+  Format.printf "attempting to open %s file...%!" ext;
   let file = "ocaml." ^ ext in
-  Open.in_default_app file
+  let ok = Open.in_default_app file in
+  if ok then Format.printf "ok.\n%!" else Format.printf "failed.\n%!"
 ) extensions;;
 
-Format.printf "done..?\n";;
+Format.printf "Done.\n";;
