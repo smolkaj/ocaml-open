@@ -19,12 +19,13 @@ let open_cmd os =
   match os with
   | MacOS -> "open"
   | Linux -> "xdg-open"
-  | Windows | Cygwin -> "start"
+  | Windows -> "start"
+  | Cygwin -> "cygstart"
 
 let silence os =
   match os with
-  | MacOS | Linux -> "> /dev/null 2>&1"
-  | Windows | Cygwin -> "> nul 2>&1"
+  | MacOS | Linux | Cygwin-> "> /dev/null 2>&1"
+  | Windows -> "> nul 2>&1"
 
 let in_default_app file : bool =
   let os = detect_os () in
