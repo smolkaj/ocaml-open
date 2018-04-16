@@ -38,8 +38,12 @@ jbuilder build @graphviz
 ```
 
 ## Limitations and Implementation
-The library has been tested under Linux and MacOS. There is experimental support for Windows/Cygwin, but this is untested.
-The implementation uses `xdg-open` on Linux, `open` on MacOS, and `cmd start` on Windows.
+The library has been tested under Linux, MacOS, and Cygwin. There is experimental support for native Windows, but this is untested.
+The implementation uses
+* `xdg-open` on Linux
+* `open` on MacOS
+* `cygstart` on Cygiwn, and
+* `cmd start` on Windows.
 
 ## Suggestion and Contributions
 Suggestions and contributions are always welcome. Feel free to submit pull requests.
