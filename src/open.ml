@@ -29,7 +29,7 @@ let silence os =
 
 let in_default_app file : bool =
   let os = detect_os () in
-  Format.sprintf "%s %s %s" (open_cmd os) file (silence os)
+  Format.sprintf "%s %S %s" (open_cmd os) file (silence os)
   |> Unix.system
   |> function
     | Unix.WEXITED 0 -> true
