@@ -12,6 +12,7 @@ $ ocaml
 > #require "open";;
 > Open.in_default_app "/home/steffen/ocaml.svg";;
 - : bool = true
+// SVG viewer opens and displays ocaml.svg
 ```
 ![OCaml](http://ocaml.org/logo/Colour/SVG/colour-logo.svg)
 
@@ -19,6 +20,14 @@ The boolean returned by `Open.in_default_app` indicates whether the open command
 ```
 > Open.in_default_app "/path/to/non-existent.file";;
 - : bool = false
+// nothing happens
+```
+
+Both absolute and relative paths are supported:
+```
+> Open.in_default_app ".";;
+- : bool = true
+// file manager displays current working directory
 ```
 ## API
 The tiny API is documented [here](https://smolkaj.github.io/ocaml-open/).
