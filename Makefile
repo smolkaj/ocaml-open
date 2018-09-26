@@ -1,17 +1,17 @@
 build:
-	jbuilder build @install
+	dune build @install
 
 install:
-	jbuilder install
+	dune install
 
 uninstall:
-	jbuilder uninstall
+	dune uninstall
 
 clean:
-	jbuilder clean
+	dune clean
 
 doc:
-	jbuilder build @doc
+	dune build @doc
 
 pushdoc: doc
 	git checkout gh-pages
@@ -21,7 +21,7 @@ pushdoc: doc
 	git checkout master
 
 test:
-	jbuilder build @runtest
+	dune runtest --no-buffer
 
 all: build test doc
 
