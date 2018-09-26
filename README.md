@@ -1,4 +1,4 @@
-# ocaml-open
+# ocaml-open: open files in their default applications
 Conveniently open files such as PDFs in their default applications straigt from OCaml.
 
 ## Quick start
