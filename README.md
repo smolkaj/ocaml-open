@@ -43,7 +43,7 @@ Run `make` to build and `make test` to see the library in action. This should op
 
 There is also a more sophisticated example in `examples/graphviz` that requires graphivz and Jane Street's [`core`](https://opensource.janestreet.com/core/) (version v0.9.0 or higher). You can build & run it as follows:
 ```
-jbuilder build @graphviz
+dune build @graphviz
 ```
 
 ## Limitations and Implementation
