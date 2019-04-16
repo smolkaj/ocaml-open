@@ -1,0 +1,5 @@
+(library
+ (name open)
+ (public_name open)
+ (wrapped false)
+ (libraries unix))

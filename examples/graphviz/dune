@@ -1,0 +1,11 @@
+(executable
+ (name graphviz)
+ (libraries open core))
+
+(alias
+ (name graphviz)
+ (deps
+  (:< graphviz.exe)
+  %{workspace_root}/examples/graphviz/unix.dot)
+ (action
+  (run %{<})))

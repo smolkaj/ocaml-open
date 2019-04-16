@@ -1,0 +1,13 @@
+(executable
+ (name basic)
+ (libraries open unix))
+
+(alias
+ (name runtest)
+ (deps
+  (:< basic.exe)
+  "%{workspace_root}/examples/basic/ocaml logo.pdf"
+  "%{workspace_root}/examples/basic/ocaml logo.png"
+  "%{workspace_root}/examples/basic/ocaml logo.svg")
+ (action
+  (run %{<})))
