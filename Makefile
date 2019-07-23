@@ -16,7 +16,7 @@ doc:
 pushdoc: doc
 	git checkout gh-pages
 	cp -r _build/default/_doc/_html/* .
-	git commit -a
+	git commit -am "update documentation"
 	git push
 	git checkout master
 
