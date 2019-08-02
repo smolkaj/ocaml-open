@@ -1,0 +1,38 @@
+language: c
+cache:
+  directories:
+  - "$HOME/.opam/"
+  - "/usr/local/Homebrew/"
+before_cache:
+- opam remove --yes $PACKAGE; opam pin remove --yes $PACKAGE
+- opam clean
+- git -C /usr/local/Homebrew/ clean -xf
+os:
+- linux
+- osx
+env:
+  global:
+  - PACKAGE=open
+  - OPAMYES=1
+  - OPAMSKIPUPDATE=1
+  - secure: hJyb5c8G57l9gcSVkaNJ+nO9zFagoGIy1c7an6ONotCUE+Y+F87VsvjM9ebjg4HykY7j2ATWCS4/e4midChCzMfu/BLkQPqniBA/uKgCBL7YaDgBsU2cmsXreMqT+xgOoNAAAXSbDBW5IMfmH9pVCrjisrGP0T2lDrNcCYrvTb6ArxaT7k26CKiMI/Bo9cBx4ZzSArwEG1w/FFpkQ2JeiNCGvXGrfH6Rf5i4yIDeFO/yPRBq+2cZJIM0eklReDqtf3IyKCxg/1nYJGQv3y9H/9QKw4N9Btz4RhcmeL2j9nR08Z7hKIaZ1u2Ll/v1z+eAta+pbC446J5wXCfDmNVy+q+NrRAkJSPSmnWXsXHb5MFXRsSmTFrbmobtRLf6h5jSnWC94f6kc8xBcY5um7+sbyoE7PZMuTjCrgkrDcMT+tp6V/CLHIk7RGCkHuUCDy2ApycAOrMxkU/qoQ90pYhd9Vf+DjzEt/SkxWbMMHLzAtHg/n+RaMNTJe5/66DKk0V0FeMud5yIDvtxIM5VxnPURppTUAybrFrKTlzKRF4IX3ynN1y8rsTxXYhsV7dEmOOEhUQEh8apZ/dFWC2AKRAnvPpC82pxqdDCsUGJVeg36cUKfjS2YYu4cu3RZTNXwOjYuwKxTkqc9d2Vlqbqy7kmDE3v6f7740volJiDnoLKUV0=
+  matrix:
+  - OCAML=4.02.3
+  - OCAML=4.04.2
+  - OCAML=4.06.1
+  - OCAML=4.08.0
+matrix:
+  fast_finish: true
+  allow_failures:
+  - os: osx
+addons:
+  homebrew:
+    packages: opam
+    update: true
+  apt:
+    packages: opam
+    sources:
+    - sourceline: ppa:avsm/ppa
+script:
+- bash -exuv ci/travis.test.sh
+- bash -exuv ci/travis.docgen.sh
