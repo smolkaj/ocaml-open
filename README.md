@@ -1,4 +1,4 @@
-# ocaml-open: open files in their default applications
+# ocaml-open: open files in their default applications [![Build Status](https://travis-ci.org/smolkaj/ocaml-open.svg?branch=master)](https://travis-ci.org/smolkaj/ocaml-open)
 Conveniently open files such as PDFs in their default applications straigt from OCaml.
 
 ## Quick start
