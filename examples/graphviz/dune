@@ -1,11 +1,32 @@
 (executable
  (name graphviz)
- (libraries open core))
+ (enabled_if (>= %{ocaml_version} 4.14.0))
+ (optional)
+ (modules graphviz)
+ (libraries open unix))
 
-(alias
- (name graphviz)
+(executable
+ (name graphviz_lwt)
+ (enabled_if (>= %{ocaml_version} 4.14.0))
+ (optional)
+ (modules graphviz_lwt)
+ (libraries lwt open_lwt unix))
+
+(rule
+ (alias runtest)
+ (enabled_if (>= %{ocaml_version} 4.14.0))
  (deps
   (:< graphviz.exe)
-  %{workspace_root}/examples/graphviz/unix.dot)
+   "%{workspace_root}/examples/graphviz/unix.dot")
+ (action
+  (run %{<})))
+
+(rule
+ (alias runtest)
+ (enabled_if (and (>= %{ocaml_version} 4.14.0)
+               %{lib-available:lwt}))
+ (deps
+  (:< graphviz_lwt.exe)
+   "%{workspace_root}/examples/graphviz/unix.dot")
  (action
   (run %{<})))

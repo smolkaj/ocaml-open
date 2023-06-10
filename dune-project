@@ -1,8 +1,8 @@
-(lang dune 1.10)
+(lang dune 2.8)
 (generate_opam_files true)
 
 (name open)
-(version 0.2.2)
+(version 0.3.0)
 (license MIT)
 (source (github smolkaj/ocaml-open))
 (authors "Steffen Smolka <smolka@cs.cornell.edu>")
@@ -13,8 +13,20 @@
   (name open)
   (synopsis "Open files in their default applications")
   (depends
-    (ocaml (>= 4.02.3))
-    (dune (and :build (>= 1.10)))
+   (ocaml (>= 4.02.3))
+    dune
     (odoc :with-doc)
   )
+)
+
+(package
+ (name open_lwt)
+ (synopsis "Open files in their default applications")
+ (depends
+  (ocaml (>= 4.02.3))
+  dune
+  (odoc :with-doc)
+ )
+ (depopts
+   lwt)
 )

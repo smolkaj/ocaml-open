@@ -1,5 +1,24 @@
 (library
+ (name open_base)
+ (wrapped false)
+ (package open)   ;; require dune 2.8, allows library to be private
+ (modules
+   base)
+)
+
+(library
  (name open)
  (public_name open)
  (wrapped false)
- (libraries unix))
+ (modules
+   open)
+ (libraries unix open_base))
+
+(library
+ (name open_lwt)
+ (public_name open_lwt)
+ (wrapped false)
+ (optional)
+ (modules
+   open_lwt)
+ (libraries unix lwt.unix open_base))
