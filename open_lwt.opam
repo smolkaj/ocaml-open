@@ -3,7 +3,7 @@ opam-version: "2.0"
 version: "0.3.0"
 synopsis: "Open files in their default applications"
 maintainer: ["Steffen Smolka <smolka@cs.cornell.edu>"]
-authors: ["Steffen Smolka <smolka@cs.cornell.edu>"]
+authors: ["Steffen Smolka <smolka@cs.cornell.edu>, Nathan Guermond"]
 license: "MIT"
 homepage: "https://github.com/smolkaj/ocaml-open"
 doc: "https://smolkaj.github.io/ocaml-open/"
@@ -12,8 +12,8 @@ depends: [
   "ocaml" {>= "4.02.3"}
   "dune" {>= "2.8"}
   "odoc" {with-doc}
+  "lwt"
 ]
-depopts: ["lwt"]
 build: [
   ["dune" "subst"] {dev}
   [

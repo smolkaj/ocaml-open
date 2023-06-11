@@ -1,5 +1,3 @@
-
-
 let in_default_app_status file : Unix.process_status =
   let os = Base.detect_os () in
   (Filename.quote_command (Base.open_cmd os) [file])

@@ -5,7 +5,7 @@
 (version 0.3.0)
 (license MIT)
 (source (github smolkaj/ocaml-open))
-(authors "Steffen Smolka <smolka@cs.cornell.edu>")
+(authors "Steffen Smolka <smolka@cs.cornell.edu>, Nathan Guermond")
 (maintainers "Steffen Smolka <smolka@cs.cornell.edu>")
 (documentation "https://smolkaj.github.io/ocaml-open/")
 
@@ -26,7 +26,6 @@
   (ocaml (>= 4.02.3))
   dune
   (odoc :with-doc)
+  lwt
  )
- (depopts
-   lwt)
 )
