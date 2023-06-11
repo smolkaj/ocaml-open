@@ -1,4 +1,7 @@
-# ocaml-open: open files in their default applications [![Build Status](https://travis-ci.org/smolkaj/ocaml-open.svg?branch=master)](https://travis-ci.org/smolkaj/ocaml-open)
+# ocaml-open: open files in their default applications
+
+[![Build Status](https://github.com/smolkaj/ocaml-open/workflows/build%20and%20test/badge.svg?branch=master)](https://github.com/smolkaj/ocaml-open/actions)
+
 Conveniently open files such as PDFs in their default applications straigt from OCaml.
 
 ## Quick start
@@ -29,9 +32,9 @@ Both absolute and relative paths are supported:
 - : bool = true
 // file manager displays current working directory
 ```
+
 ## API
 The tiny API is documented [here](https://smolkaj.github.io/ocaml-open/).
-
 
 ## Building from source
 
