@@ -13,5 +13,6 @@ let () =
   In_channel.open_text "unix.dot"  
   |> In_channel.input_all      (* requires ocaml 4.14.0 *)
   |> compile_dot
-  |> Open.in_default_app
+  |> Open_lwt.in_default_app
+  |> Lwt_main.run
   |> Printf.printf "file opened successfully: %b\n"

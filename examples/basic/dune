@@ -1,11 +1,29 @@
 (executable
  (name basic)
+ (modules basic)
  (libraries open unix))
 
-(alias
- (name runtest)
+(executable
+ (name basic_lwt)
+ (modules basic_lwt)
+ (optional)
+ (libraries lwt open_lwt unix))
+
+(rule
+ (alias runtest)
  (deps
   (:< basic.exe)
+  "%{workspace_root}/examples/basic/ocaml logo.pdf"
+  "%{workspace_root}/examples/basic/ocaml logo.png"
+  "%{workspace_root}/examples/basic/ocaml logo.svg")
+ (action
+  (run %{<})))
+
+(rule
+ (alias runtest)
+ (enabled_if %{lib-available:lwt})
+ (deps
+  (:< basic_lwt.exe)
   "%{workspace_root}/examples/basic/ocaml logo.pdf"
   "%{workspace_root}/examples/basic/ocaml logo.png"
   "%{workspace_root}/examples/basic/ocaml logo.svg")
