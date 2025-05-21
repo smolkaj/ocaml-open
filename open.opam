@@ -16,7 +16,7 @@ version: "0.2.2"
 dev-repo: "git+https://github.com/smolkaj/ocaml-open.git"
 synopsis: "Open files in their default applications"
 depends: [
-  "ocaml" {>= "4.02.3"}
-  "dune" {build & >= "1.10"}
+  "ocaml" {>= "4.08.0"}
+  "dune" {build & >= "3.18.2"}
   "odoc" {with-doc}
 ]

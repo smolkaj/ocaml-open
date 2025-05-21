@@ -1,4 +1,4 @@
-(lang dune 1.10)
+(lang dune 3.18)
 (generate_opam_files true)
 
 (name open)
@@ -13,8 +13,8 @@
   (name open)
   (synopsis "Open files in their default applications")
   (depends
-    (ocaml (>= 4.02.3))
-    (dune (and :build (>= 1.10)))
+    (ocaml (>= 4.08.0))
+    (dune (and :build (>= 3.18.2)))
     (odoc :with-doc)
   )
 )
